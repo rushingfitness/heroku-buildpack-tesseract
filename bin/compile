@@ -17,3 +17,12 @@ mkdir -p $BUILD_DIR/.profile.d
 PROFILE_D=$BUILD_DIR/.profile.d/tesseract.sh
 cp eng.unicharset $BUILD_DIR/vendor/share/tessdata/
 echo "export TESSDATA_PREFIX=\"\$HOME/vendor/share/\";" >> $PROFILE_D
+
+
+wget http://www.nuance.com/keys/gpg-pubkey-nuance-lnx1.asc
+gpg --import gpg-pubkey-nuance-lnx1.asc
+gpg --verify-files nuance-*.asc
+
+dpkg -i nuance-omnipage-csdk-lib64_19.0-*_amd64.deb
+dpkg -i nuance-omnipage-csdk-devel_19.0-*_amd64.deb
+
