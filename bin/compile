@@ -19,10 +19,4 @@ cp eng.unicharset $BUILD_DIR/vendor/share/tessdata/
 echo "export TESSDATA_PREFIX=\"\$HOME/vendor/share/\";" >> $PROFILE_D
 
 
-wget http://www.nuance.com/keys/gpg-pubkey-nuance-lnx1.asc
-gpg --import gpg-pubkey-nuance-lnx1.asc
-gpg --verify-files nuance-*.asc
-
-dpkg -i nuance-omnipage-csdk-lib64_19.0-*_amd64.deb
-dpkg -i nuance-omnipage-csdk-devel_19.0-*_amd64.deb
-
+wget https://www.dropbox.com/s/rxz2h7hhkvekl1f/FRE11Linuxx86_64_part_1155-14_build_11-1-6-562411.sh?dl=1 -P $BUILD_DIR/vendor/share
